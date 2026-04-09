@@ -1,0 +1,26 @@
+{
+  "name": "@inference-relay/doc-analyzer-web",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev --port 3100",
+    "build": "next build",
+    "start": "next start --port 3100",
+    "postinstall": "node -e \"const fs=require('fs');const path=require('path');const src=path.join('node_modules','pdfjs-dist','build');const dst='public';fs.mkdirSync(dst,{recursive:true});['pdf.min.mjs','pdf.worker.min.mjs'].forEach(f=>{try{fs.copyFileSync(path.join(src,f),path.join(dst,f));console.log('Copied',f);}catch(e){console.error('Failed to copy',f,e.message);}});\""
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "0.82.0",
+    "inference-relay": "^1.4.0",
+    "next": "^15.0.0",
+    "pdfjs-dist": "^5.6.205",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "typescript": "^5.9.0"
+  }
+}
