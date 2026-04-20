@@ -30,8 +30,8 @@ export async function handleAnalyze(
   if (!document || typeof document !== 'string') {
     return NextResponse.json({ error: 'Document text required' }, { status: 400 });
   }
-  if (document.length > 200_000) {
-    return NextResponse.json({ error: 'Document exceeds 200KB limit' }, { status: 400 });
+  if (document.length > 500_000) {
+    return NextResponse.json({ error: 'Document exceeds 500KB limit' }, { status: 400 });
   }
 
   if (task === 'triage') {
